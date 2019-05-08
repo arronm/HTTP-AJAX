@@ -9,12 +9,17 @@ class App extends Component {
 
   componentDidMount() {
     axios.get(`http://localhost:5000/friends`)
-      .then(res => {
-        this.setState({
-          ...this.state,
-          friends: res.data,
-      });
-    });
+      .then(
+        res => {
+          this.setState({
+            ...this.state,
+            friends: res.data,
+          });
+        },
+        error => {
+          console.log(error);
+        }
+    );
   }
 
   render() {
@@ -27,16 +32,3 @@ class App extends Component {
 }
  
 export default App;
-
-// function App() {
-//   const componentDidMount = () => {
-
-//   }
-//   return (
-//     <div className="App">
-//       <FriendsList />
-//     </div>
-//   );
-// }
-
-// export default App;
