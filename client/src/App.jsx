@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FriendsList from './components/FriendsList/FriendsList';
 import axios from 'axios';
+import Form from './components/Form/Form';
 
 class App extends Component {
   state = {
@@ -22,10 +23,18 @@ class App extends Component {
     );
   }
 
+  updateFriends = (friends) => {
+    this.setState({
+      ...this.state,
+      friends
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <FriendsList friends={this.state.friends} />
+        <Form action="http://localhost:5000/friends" method="post" updateFriends={this.updateFriends} />
       </div>
     );
   }

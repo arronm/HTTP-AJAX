@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Friend = (props) => {
-  console.log(props);
   return (
     <div>
       <span>{props.name}</span>
