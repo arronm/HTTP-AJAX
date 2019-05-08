@@ -19,7 +19,7 @@ class App extends Component {
           });
         },
         error => {
-          console.log(error);
+          console.log('Error Caught: ', error);
         }
     );
   }

@@ -6,23 +6,17 @@ import Form from '../Form/Form';
 
 const Friend = (props) => {
 
-  // NOTE: This action is probably better abstracted out, but we haven't covered that yet
   const handleDelete = () => {
     axios.delete(`http://localhost:5000/friends/${props.id}`)
       .then(
         res => {
-          console.log(res.data);
           props.updateFriends(res.data);
         }
       ).catch(
         error => {
-          console.log('Catch Error: ', error);
+          console.log('Error Caught: ', error);
         }
       );
-  }
-
-  const handleEdit = () => {
-    
   }
 
   return (

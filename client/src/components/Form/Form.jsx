@@ -32,7 +32,7 @@ class Form extends Component {
         }
       }
     ).catch(error => {
-      console.log(error);
+      console.log('Error Caught: ', error);
     });
   }
 
