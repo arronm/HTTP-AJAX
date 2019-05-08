@@ -33,7 +33,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <FriendsList friends={this.state.friends} />
+        <FriendsList friends={this.state.friends} updateFriends={this.updateFriends} />
         <Form action="http://localhost:5000/friends" method="post" updateFriends={this.updateFriends} />
       </div>
     );

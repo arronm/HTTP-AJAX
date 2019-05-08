@@ -7,7 +7,7 @@ const FriendsList = (props) => {
     <div>
       <h1>Friends List</h1>
       {
-        props.friends.map(friend => <Friend key={friend.id} {...friend} />)
+        props.friends.map(friend => <Friend key={friend.id} {...friend} updateFriends={props.updateFriends} />)
       }
     </div>
   );
@@ -19,6 +19,7 @@ FriendsList.propTypes = {
     age: PropTypes.number,
     email: PropTypes.string,
   })).isRequired,
+  updateFriends: PropTypes.func.isRequired,
 };
 
 export default FriendsList;
