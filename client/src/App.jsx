@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import FriendsList from './components/FriendsList/FriendsList';
 import axios from 'axios';
+import { BrowserRouter as Router } from 'react-router-dom';
+import FriendsList from './components/FriendsList/FriendsList';
 import Form from './components/Form/Form';
 
 class App extends Component {
@@ -32,10 +33,17 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <FriendsList friends={this.state.friends} updateFriends={this.updateFriends} />
-        <Form action="http://localhost:5000/friends" method="post" updateFriends={this.updateFriends} />
-      </div>
+      <Router>
+        <div className="App">
+          <FriendsList friends={this.state.friends} updateFriends={this.updateFriends} />
+          <Form
+            action="http://localhost:5000/friends"
+            method="post"
+            updateFriends={this.updateFriends}
+            buttonText="Add Friend"
+          />
+        </div>
+      </Router>
     );
   }
 }

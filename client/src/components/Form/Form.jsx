@@ -26,12 +26,14 @@ class Form extends Component {
           name: '',
           age: '',
           email: '',
-        });
-      },
-      error => {
-        console.log(error);
+        }); 
+        if (this.props.destination) {
+          this.props.history.push(this.props.destination)
+        }
       }
-    );
+    ).catch(error => {
+      console.log(error);
+    });
   }
 
   handleOnChange = (event) => {
@@ -47,7 +49,7 @@ class Form extends Component {
         <input type="text" value={this.state.name} name="name" onChange={this.handleOnChange} />
         <input type="text" value={this.state.age} name="age" onChange={this.handleOnChange} />
         <input type="text" value={this.state.email} name="email" onChange={this.handleOnChange} />
-        <input type="submit" value="Add Friend" />
+        <input type="submit" value={this.props.buttonText} />
       </form>
     );
   }
@@ -56,7 +58,9 @@ class Form extends Component {
 Form.propTypes = {
   action: PropTypes.string.isRequired,
   method: PropTypes.string.isRequired,
+  buttonText: PropTypes.string.isRequired,
   updateFriends: PropTypes.func.isRequired,
+  destination: PropTypes.string,
 }
  
 export default Form;

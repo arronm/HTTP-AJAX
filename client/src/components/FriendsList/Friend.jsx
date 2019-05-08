@@ -1,6 +1,8 @@
 import React from 'react';
+import { Route, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import Form from '../Form/Form';
 
 const Friend = (props) => {
 
@@ -11,9 +13,6 @@ const Friend = (props) => {
         res => {
           console.log(res.data);
           props.updateFriends(res.data);
-        },
-        error => {
-          console.log('Then Error: ', error);
         }
       ).catch(
         error => {
@@ -22,12 +21,30 @@ const Friend = (props) => {
       );
   }
 
+  const handleEdit = () => {
+    
+  }
+
   return (
     <div>
       <div>Name: {props.name}</div>
       <div>Age: {props.age}</div>
       <div>Email: {props.email}</div>
       <div onClick={handleDelete}>&times;</div>
+      <Link to={`/edit/${props.id}`}>Edit</Link>
+      <Route
+        path={`/edit/${props.id}`}
+        render={(routeProps) => (
+          <Form
+            action={`http://localhost:5000/friends/${props.id}`}
+            method="put"
+            buttonText="Edit"
+            updateFriends={props.updateFriends}
+            destination="/"
+            {...routeProps}
+          />
+        )}
+      />
       <br />
     </div>
   );
