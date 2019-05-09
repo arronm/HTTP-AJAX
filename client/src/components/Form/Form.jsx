@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import './Form.css';
 
 class Form extends Component {
   constructor(props) {
@@ -49,9 +50,9 @@ class Form extends Component {
   render() { 
     return (
       <form className="Form" onSubmit={this.handleOnSubmit}>
-        <input className="Form__name" type="text" value={this.state.name} name="name" onChange={this.handleOnChange} />
-        <input className="Form__age" type="text" value={this.state.age} name="age" onChange={this.handleOnChange} />
-        <input className="Form__email" type="text" value={this.state.email} name="email" onChange={this.handleOnChange} />
+        <input placeholder="name" className="Form__name" type="text" value={this.state.name} name="name" onChange={this.handleOnChange} />
+        <input placeholder="age" className="Form__age" type="text" value={this.state.age} name="age" onChange={this.handleOnChange} />
+        <input placeholder="email" className="Form__email" type="text" value={this.state.email} name="email" onChange={this.handleOnChange} />
         <input className="Form__submit" type="submit" value={this.props.buttonText} />
       </form>
     );
