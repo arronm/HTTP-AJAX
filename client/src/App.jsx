@@ -45,7 +45,6 @@ class App extends Component {
           /> */}
           <Route
             path="/"
-            exact
             render={
               () => (
                 <div>
