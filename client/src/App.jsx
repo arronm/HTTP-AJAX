@@ -62,7 +62,7 @@ class App extends Component {
           <Route
             path="/add-friend"
             render={
-              () => (
+              (routeProps) => (
                 <>
                   <h1>Add A Friend</h1>
                   <Form
@@ -70,6 +70,8 @@ class App extends Component {
                     method="post"
                     updateFriends={this.updateFriends}
                     buttonText="Add Friend"
+                    destination="/"
+                    {...routeProps}
                   />
                   <Link to="/">
                     <h3>Cancel</h3>

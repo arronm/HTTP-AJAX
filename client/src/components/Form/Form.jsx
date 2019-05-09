@@ -30,7 +30,7 @@ class Form extends Component {
           name: '',
           age: '',
           email: '',
-        }); 
+        });
         if (this.props.destination) {
           this.props.history.push(this.props.destination)
         }
@@ -47,7 +47,8 @@ class Form extends Component {
     });
   }
 
-  render() { 
+  render() {
+    console.log(this.props.destination);
     return (
       <form className="Form" onSubmit={this.handleOnSubmit}>
         <input placeholder="name" className="Form__name" type="text" value={this.state.name} name="name" onChange={this.handleOnChange} />
