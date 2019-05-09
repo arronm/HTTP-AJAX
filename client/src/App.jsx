@@ -3,6 +3,7 @@ import axios from 'axios';
 import { BrowserRouter as Router } from 'react-router-dom';
 import FriendsList from './components/FriendsList/FriendsList';
 import Form from './components/Form/Form';
+import './App.css';
 
 class App extends Component {
   state = {

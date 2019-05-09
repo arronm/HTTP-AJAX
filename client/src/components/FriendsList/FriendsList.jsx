@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Friend from './Friend';
+import Friend from './Friend'; 
+import './FriendList.css';
 
 const FriendsList = (props) => {
   return (
-    <div>
+    <div className="FriendList">
       <h1>Friends List</h1>
       {
         props.friends.map(friend => <Friend key={friend.id} {...friend} updateFriends={props.updateFriends} />)

@@ -48,11 +48,11 @@ class Form extends Component {
 
   render() { 
     return (
-      <form onSubmit={this.handleOnSubmit}>
-        <input type="text" value={this.state.name} name="name" onChange={this.handleOnChange} />
-        <input type="text" value={this.state.age} name="age" onChange={this.handleOnChange} />
-        <input type="text" value={this.state.email} name="email" onChange={this.handleOnChange} />
-        <input type="submit" value={this.props.buttonText} />
+      <form className="Form" onSubmit={this.handleOnSubmit}>
+        <input className="Form__name" type="text" value={this.state.name} name="name" onChange={this.handleOnChange} />
+        <input className="Form__age" type="text" value={this.state.age} name="age" onChange={this.handleOnChange} />
+        <input className="Form__email" type="text" value={this.state.email} name="email" onChange={this.handleOnChange} />
+        <input className="Form__submit" type="submit" value={this.props.buttonText} />
       </form>
     );
   }
