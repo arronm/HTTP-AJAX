@@ -7,17 +7,20 @@ class Form extends Component {
     super(props);
     this.state = {
       name: '',
-      age: '', // DEBUG: This will pass in as a string from input, need to coerce to number
+      age: '',
       email: '',
     }
   }
 
   handleOnSubmit = (event) => {
     event.preventDefault();
+    const friend = {
+      ...this.state,
+      age: this.state.age ? parseInt(this.state.age) : '',
+    };
+    Object.keys(friend).forEach((key) => (friend[key] === '') && delete friend[key]);
     axios[this.props.method](this.props.action, {
-      name: this.state.name,
-      age: parseInt(this.state.age, 10),
-      email: this.state.email,
+      ...friend
     }).then(
       res => {
         this.props.updateFriends(res.data);
