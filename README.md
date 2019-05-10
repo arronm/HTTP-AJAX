@@ -61,7 +61,7 @@ Check in the notepad channel on slack for cohort specific resources like codesan
 ```
 
 API endpoints for reference:
-```
+```javascript
 GET /friends
 POST /friends
 PUT /friends/:id
