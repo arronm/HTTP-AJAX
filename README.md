@@ -1,6 +1,4 @@
-# HTTP/AJAX
-
----
+# HTTP/AJAX-I, HTTP/AJAX-II
 
 ## Information
 
