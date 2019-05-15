@@ -1,0 +1,32 @@
+.FriendList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Friend {
+  width: 100%;
+  background: #fcfcfc;
+  border: 1px solid #dbdbdb;
+  margin: 10px;
+  position: relative;
+  padding: 10px;
+  text-align: left;
+  border-radius: 3px;
+}
+
+.Friend__name {
+  font-size: 25px;
+}
+
+.Friend__delete {
+  position: absolute; 
+  top: 0;
+  right: 10px;
+  cursor: pointer;
+  padding: 3px;
+}
+
+.Friend .Form {
+  width: auto;
+}
